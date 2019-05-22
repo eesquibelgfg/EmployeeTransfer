@@ -16,5 +16,3 @@ User will be created in OU=NewEmployees,OU=Transfers,DC=gradientfg,DC=COM
 Create mailbox in GPS_1
 Create SFB user on prem.
 
-.OUTPUTS
-Results are written to a results.log file along with the date.#>
