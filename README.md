@@ -14,6 +14,7 @@ Create mailbox in GPS_1
 Create SFB user on prem.
 
 .NOTES
+Look at Adding o365 Group based on Company. Sync AD with Azure AD. Migrate user out to o365
 Created by Eric Esquibel
 
 #>
