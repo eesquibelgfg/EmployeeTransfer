@@ -57,6 +57,7 @@ $session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 Import-PSSession $session -DisableNameChecking -AllowClobber
 
 Enable-Mailbox -Identity $($samaccountname+1) -Database "GPS_1" -Alias $($samaccountname+1)
+Set-CASMailbox -Identity $($samaccountname+1) -OWAEnabled $false -ActiveSyncEnabled $false
 
 
 #Connect to Skype for Business and create account
