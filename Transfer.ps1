@@ -52,7 +52,7 @@ if ($state -eq 'MN')
     -PostalCode '66609' -City 'Topeka'}
 
 #Connecting to Exchange and create account
-$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http://gfgm1exch01.gradientfg.com/PowerShell/ -Credential $credentials
+$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http://gfgm1exch02.gradientfg.com/PowerShell/ -Credential $credentials
 
 Import-PSSession $session -DisableNameChecking -AllowClobber
 
@@ -60,11 +60,4 @@ Enable-Mailbox -Identity $($samaccountname+1) -Database "GPS_1" -Alias $($samacc
 Set-CASMailbox -Identity $($samaccountname+1) -OWAEnabled $false -ActiveSyncEnabled $false
 
 
-#Connect to Skype for Business and create account
-$sfbsession = New-PSSession -ConnectionUri "https://gfgm1sfb01.gradientfg.com/OcsPowershell" -Credential $credentials
-Import-PSSession $sfbsession -DisableNameChecking -AllowClobber
-
-Enable-CsUser -Identity $($samaccountname+1) `
-    -RegistrarPool "gfgm1sfb01.gradientfg.com" `
-    -SipAddressType SamAccountName -SipDomain gradientfg.com `
 
